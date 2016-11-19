@@ -5,5 +5,13 @@ public class WiseControler {
     public static void main(String[] args){
         System.out.println("hello world");
         System.out.println("tomorrow i will study algorithm again");
+        System.out.println("tomorrow i am serious");
+        System.out.println("hello world");
+        System.out.println("tomorrow i will study algorithm again");
+        System.out.println("tomorrow i am serious");
+        System.out.println("hello world");
+        System.out.println("tomorrow i will study algorithm again");
+        System.out.println("tomorrow i am serious");
+
     }
 }
