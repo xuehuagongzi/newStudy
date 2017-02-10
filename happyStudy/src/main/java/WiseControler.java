@@ -12,5 +12,6 @@ public class WiseControler {
         System.out.println("hello world");
         System.out.println("tomorrow i will study algorithm again");
         System.out.println("tomorrow i am serious");
+
     }
 }
