@@ -33,11 +33,13 @@ public class ThreeSumSolution {
                     childList.add(nums[m]);
                     listList.add(childList);
                     j++;
+                    //满足结果中没有重复数据
                     //要做好控制边界的量，否则会抛出数组越界异常
                     while (j < m && nums[j] == nums[j - 1]) {
                         j++;
                     }
                     m--;
+                    //满足结果中没有重复数据
                     //要做好控制边界的量，否则会抛出数组越界异常
                     while (j < m && nums[m] == nums[m + 1]) {
                         m--;
@@ -48,6 +50,7 @@ public class ThreeSumSolution {
                     m--;
                 }
             }
+            //满足结果中没有重复数据
             //要做好控制边界的量，否则会抛出数组越界异常
             while (i < nums.length-1&&nums[i+1]==nums[i]){
                 i++;
@@ -67,3 +70,9 @@ public class ThreeSumSolution {
         }
     }
 }
+/*
+总结：
+三个数的和不用通过三层循环来遍历和计算，可以减少一次。那么需要先排序，
+后两个数一个（j）比第一个数（i）大1，一个（m）是数组的最后一个数，来进行计算。
+这就需要控制好j和m的边界（j<m）和i小于数组长度
+ */

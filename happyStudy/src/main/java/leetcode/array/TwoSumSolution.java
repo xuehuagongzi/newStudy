@@ -38,3 +38,7 @@ public class TwoSumSolution {
         System.out.println(res[1]);
     }
 }
+/*
+总结：
+两个数的和可以通过map来计算，key是值，value是数组下标，复杂度是n。若要是两次循环的话复杂度是n*n
+ */
