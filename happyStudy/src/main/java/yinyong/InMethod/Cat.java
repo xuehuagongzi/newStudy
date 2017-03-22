@@ -1,4 +1,4 @@
-package yinyong;
+package yinyong.InMethod;
 
 /**
  * Created by zhangwenqiang on 2017/1/2.
