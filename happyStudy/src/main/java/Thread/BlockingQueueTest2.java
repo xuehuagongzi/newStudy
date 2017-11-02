@@ -11,7 +11,7 @@ public class BlockingQueueTest2
     public static void main(String[] args)
     {
         // 创建一个容量为1的BlockingQueue
-        BlockingQueue<String> bq = new ArrayBlockingQueue<>(1);
+        BlockingQueue<String> bq = new ArrayBlockingQueue<>(2);
         // 启动3条生产者线程
         new Producer(bq).start();
         new Producer(bq).start();
@@ -35,11 +35,13 @@ class Consumer extends Thread
 //            System.out.println(getName() + "消费者准备消费集合元素！");
             try
             {
+
                 // 尝试取出元素，如果队列已空，线程被阻塞
                 bq.take();
             }
             catch (Exception ex){ex.printStackTrace();}
             System.out.println(getName() + "消费完成：" + bq);
+
         }
     }
 }
@@ -62,6 +64,7 @@ class Producer extends Thread
             }
             catch (Exception ex){ex.printStackTrace();}
             System.out.println(getName() + "生产完成：" + bq);
+
         }
     }
 }

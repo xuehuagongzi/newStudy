@@ -30,14 +30,16 @@ public class Cat {
     public static void main(String[] args) {
         Cat catA=new Cat("catA");
         Cat catB=new Cat("catB");
-        change(catA);
-        System.out.println(catA);
+        Cat newCat=change(catA);
+        System.out.println(newCat);
     }
 
-    public static void change(Cat cat){
-//        cat.setName("haha");
-        Cat b=new Cat("BBB");
-        cat=null;
+    public static Cat change(Cat cat){
+        cat.setName("haha");
+        Cat b=new Cat("ccc");
+        b=cat;
+        return b;
+//        cat=null;
     }
 
 }

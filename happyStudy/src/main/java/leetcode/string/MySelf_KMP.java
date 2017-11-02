@@ -20,6 +20,7 @@ public class MySelf_KMP {
         int i=0,j=0;
         int result=-1;
         while(i<strs.length && j<strt.length){
+            //这个j==-1的意思是说当前匹配字段strs[i]和strs[0]都不相等，所以要都加1
             if(j==-1 || strs[i]==strt[j]){
                 i++;
                 j++;
@@ -55,9 +56,10 @@ public class MySelf_KMP {
     private static int[] getNext(String strPattern) {
         int next[]=new int[strPattern.length()];
         next[0]=-1;
-        int i=1;
+        int i=0;
         int j=-1;//j是next(j-1)或者next(next())的值
         while(i<strPattern.length()-1){
+            //当比较strPattern.charAt(1)==strPattern.charAt(next(1))的时候，说明是当i=2时出现了不匹配的现象
             if(j==-1 || strPattern.charAt(i)==strPattern.charAt(j)){
                 i++;
                 j++;
@@ -66,6 +68,18 @@ public class MySelf_KMP {
                 j=next[j];
             }
         }
+
+/*        //自己写的算法会更好理解点
+        next[1]=0;
+        for (int k = 2; k < strPattern.length()-1; k++) {
+            if(j==-1 || strPattern.charAt(k-1)==strPattern.charAt(next[k-1])){
+                j=next[k-1]+1;
+                next[k]=j;
+            }else {
+                j=next[next[k-1]];
+                k--;
+            }
+        }*/
         return next;
     }
 }
